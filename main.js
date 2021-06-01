@@ -27,12 +27,29 @@ Finish this function, it should return a HTML element that looks like this:
 </li>
 */
 function createResultElement(title, description) {
-    console.log("This function is not implemented."); 
-    //Creating and setting class to li
-    const liTag = document.createElement('li')
-    //Creating and setting class to article
-    const articleTag = document.createElement('article')
+    console.log(title, description); 
 
+    //Creating elements
+    const liEle = document.createElement('li')
+    const articleEle = document.createElement('article')
+    const headerEle = document.createElement('header')
+    const divEle = document.createElement('div')
+
+    // Adding classes to elements
+    articleEle.classList.add("search-result")
+    headerEle.classList.add("search-result-header", "search-result-section")
+    divEle.classList.add("search-result-body", "search-result-section")
+
+    //add textcontent
+    headerEle.textContent = title
+    divEle.textContent = description
+
+    // Appending
+    articleEle.appendChild(headerEle)
+    articleEle.appendChild(divEle)
+    liEle.appendChild(articleEle)
+
+    return liEle
 }
 
 /**

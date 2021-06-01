@@ -16,4 +16,7 @@ createResultElement
 
 5. create div, add class
 6. add description
-7. add
+7. append to article.
+
+8. append artcile to li.
+8. append li to body.
