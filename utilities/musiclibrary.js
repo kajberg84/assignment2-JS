@@ -1,4 +1,6 @@
-const RESULTS = [{
+// musicLibrary.js
+
+export const RESULTS = [{
   "id": 1,
   "title": "Cannibal! The Musical (a.k.a. Alferd Packer: The Musical)",
   "description": "Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat.\n\nIn congue. Etiam justo. Etiam pretium iaculis justo.",
@@ -319,3 +321,4 @@ const RESULTS = [{
   "description": "Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus.\n\nIn sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.",
   "image": "Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi."
 }];
+

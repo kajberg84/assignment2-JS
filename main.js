@@ -1,10 +1,9 @@
-// some data for our search box.
-// scroll down to find the rest of the code.
+// main.js
 
+//imports
+import  { RESULTS } from './utilities/musicLibrary.js'
 
-
-
-/* Our code */
+console.log(RESULTS)
 
 // input field
 const inputField = document.getElementById("search");
@@ -28,23 +27,36 @@ Finish this function, it should return a HTML element that looks like this:
 </li>
 */
 function createResultElement(title, description) {
-    console.log("This function is not implemented.");
+    console.log("This function is not implemented."); 
+    //Creating and setting class to li
+    const liTag = document.createElement('li')
+    //Creating and setting class to article
+    const articleTag = document.createElement('article')
+
 }
 
-// Finish this function
-// takes in a string as an argument and searches the "RESULTS" array to find one or many results
-// that matches the string.
-// should compare the title and description of each result.
-//
-// This should return an array with all matching results.
-function findResult(query) {
-    console.log("You searched for: ", query, "But this function is not implemented.");
+/**
+ * Searching an array after inserted value
+ *
+ * @param { String } querySearch - User inputed value.
+ * @return { Array{} } resultArray -   
+ */
+function findResult(querySearch) {
+    let resultArray = []
+    querySearch = querySearch.toLowerCase()
+
+    // Searching RESULTS if includes inputed value.
+    RESULTS.forEach(item=> {
+        if(item.title.toLowerCase().includes(querySearch) || item.description.toLowerCase().includes(querySearch)){
+            resultArray.push(item)
+        }})
+    return resultArray
 }
 
+// Adding eventlistener on keyup
 inputField.addEventListener("keyup", function(event){
-    // search for results
     const results = findResult(event.target.value);
-    
+    console.log(results)
     // clear previous results
     resultsArea.innerHTML = '';
 
