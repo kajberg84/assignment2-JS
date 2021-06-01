@@ -17,7 +17,10 @@ const resultsArea = document.getElementById("search-results");
 function createResultElement(title, description) {
 
     const liEle = document.createElement('li')
+
+    // article
     const articleEle = document.createElement('article')
+    articleEle.classList.add("search-result")
 
     // Header for title
     const headerEle = document.createElement('header')
@@ -28,9 +31,6 @@ function createResultElement(title, description) {
     const divEle = document.createElement('div')
     divEle.classList.add("search-result-body", "search-result-section")
     divEle.textContent = description
-    
-    // Adding classes to article
-    articleEle.classList.add("search-result")
     
     // Appending elements
     articleEle.appendChild(headerEle)
@@ -53,7 +53,7 @@ function findResult(querySearch) {
     // Searching RESULTS if includes inputed value.
         RESULTS.forEach(item => {
             if(item.title.toLowerCase().includes(querySearch) || item.description.toLowerCase().includes(querySearch)){
-                resultArray.push(item)
+            resultArray.push(item)
         }})
 
     return resultArray
