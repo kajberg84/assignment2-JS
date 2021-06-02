@@ -18,7 +18,7 @@ function createResultElement(title, description) {
 
     const liEle = document.createElement('li')
 
-    // article
+    // Article
     const articleEle = document.createElement('article')
     articleEle.classList.add("search-result")
 
@@ -62,16 +62,15 @@ function findResult(querySearch) {
 // Adding eventlistener on keyup
 inputField.addEventListener("keyup", function(event){
     const results = findResult(event.target.value);
-    // clear previous results
     resultsArea.innerHTML = '';
 
-    // convert all results objects to HTML elements and push them to our "resultsArea" div.
-    if (results) {
-        results.forEach(item => resultsArea.appendChild(createResultElement(
-            item.title,
-            item.description
-        )));
-    } else {
-        console.log('No matches')
-    }
+// Push found object to "resultsArea".
+if (results) {
+    results.forEach(item => resultsArea.appendChild(createResultElement(
+        item.title,
+        item.description
+    )));
+} else {
+    console.log('No matches')
+}
 });
